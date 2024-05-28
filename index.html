@@ -3,42 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site Mobile</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Página de Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-<style>
-</style>
-    <header>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="form-group">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" required>
+        </div>
+        <div class="form-group">
+            <button onclick="login()">Entrar</button>
+        </div>
+    </div>
 
-    </header>
-    <main>
-        <section>
-<div class="container">
-    <div class="row align-items-center h-100">
-        <div class="col-8 col-md-3 col-xs-8 mx-auto l-form">
-            <form class="form" method="post">
-                <img class="row mx-auto" src="https://i.imgur.com/RhJpe7c.png" width="150" alt="Logo">
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Senha" class="form-control">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-dark btn-md btn-block">Login</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-    </form>
-        </section>
-    </main>
-    <footer>
-    </footer>
-    <script src="scripts.js">
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-</script>
+            if (username && password) {
+                // Simulate a login process and store user information in local storage
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password); // Note: storing passwords in local storage is not recommended for real applications.
+                alert('Login bem-sucedido!');
+                // Redirecionar para a página principal ou outra página após o login
+                window.location.href = 'pagina_principal.html';
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        }
+
+        // Verifica se o usuário já está logado
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const username = localStorage.getItem('username');
+            if (username) {
+                alert(`Bem-vindo de volta, ${username}!`);
+                // Redirecionar para a página principal ou outra página
+                window.location.href = 'pagina_principal.html';
+            }
+        });
+    </script>
 </body>
 </html>
