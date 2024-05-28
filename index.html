@@ -75,23 +75,22 @@
             const password = document.getElementById('password').value;
 
             if (username && password) {
-                // Simulate a login process and store user information in local storage
+               
                 localStorage.setItem('username', username);
                 localStorage.setItem('password', password); // Note: storing passwords in local storage is not recommended for real applications.
                 alert('Login bem-sucedido!');
-                // Redirecionar para a página principal ou outra página após o login
+               
                 window.location.href = 'index2.html';
             } else {
                 alert('Por favor, preencha todos os campos.');
             }
         }
 
-        // Verifica se o usuário já está logado
         document.addEventListener('DOMContentLoaded', (event) => {
             const username = localStorage.getItem('username');
             if (username) {
                 alert(`Bem-vindo de volta, ${username}!`);
-                // Redirecionar para a página principal ou outra página
+                
                 window.location.href = 'index2.html';
             }
         });
