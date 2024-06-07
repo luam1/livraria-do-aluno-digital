@@ -3,89 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locação de Filmes</title>
+    <title>Resumo do Livro</title>
     <style>
         body {
-            background-color: black;
-            color: white;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
         .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a, header h1 {
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+        }
+        .content {
             padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #333;
-            border-radius: 100px;
-        }
-        .title {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .details {
-            margin-bottom: 20px;
-        }
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            background: #fff;
+            margin-top: 20px;
         }
         button {
-            padding: 10px 15px;
+            background-color: #333;
+            color: white;
             border: none;
-            border-radius: 5px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
             cursor: pointer;
-            font-size: 14px;
         }
-        button.rent {
-            background-color: #ff0000;
-            color: white;
-        }
-        button.favorite {
-            background-color: #ff0000;
-            color: white;
-        }
-        button.stream {
-            background-color: #ff0000;
-            color: white;
-        }
-        button.report {
-            background-color: #ff0000;
-            color: white;
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="title"></div>
-        <div class="details">
-            <p><strong>Diretor:</strong></p>
-            <p><strong>Ano:</strong></p>
-            <p><strong>Gênero:</strong></p>
-            <p><strong>Sinopse:</strong></p>
+    <header>
+        <div class="container">
+            <h1>Resumo do Livro</h1>
         </div>
-        <div class="buttons">
-            <button class="rent" onclick="rentMovie()">Alugar Filme</button>
-            <button class="favorite" onclick="markFavorite()">Marcar como Favorito</button>
-            <button class="stream" onclick="streamMovie()">Transmitir</button>
-            <button class="report" onclick="reportMovie()">Denunciar</button>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>Título do Livro</h2>
+            <p><strong>Autor:</strong> Nome do Autor</p>
+            <button onclick="showSection('resumo')">Resumo</button>
+            <button onclick="showSection('autor')">Sobre o Autor</button>
+            <button onclick="showSection('comentarios')">Comentários</button>
+
+            <div id="resumo" class="hidden">
+                <h3>Resumo</h3>
+                <p>Este é o resumo do livro. Ele descreve a trama principal, os personagens e o ambiente em que a história se passa...</p>
+            </div>
+            <div id="autor" class="hidden">
+                <h3>Sobre o Autor</h3>
+                <p>Informações sobre o autor do livro, incluindo biografia, outras obras publicadas, prêmios recebidos...</p>
+            </div>
+            <div id="comentarios" class="hidden">
+                <h3>Comentários</h3>
+                <p>Comentário 1: "Uma leitura fascinante!"</p>
+                <p>Comentário 2: "Gostei muito do desenvolvimento dos personagens..."</p>
+                <p>Comentário 3: "Uma obra-prima da literatura moderna."</p>
+            </div>
         </div>
     </div>
 
     <script>
-        function rentMovie() {
-            alert("Filme alugado com sucesso!");
-        }
+        function showSection(sectionId) {
+            document.getElementById('resumo').classList.add('hidden');
+            document.getElementById('autor').classList.add('hidden');
+            document.getElementById('comentarios').classList.add('hidden');
 
-        function markFavorite() {
-            alert("Filme marcado como favorito!");
-        }
-
-        function streamMovie() {
-            alert("Iniciando transmissão do filme!");
-        }
-
-        function reportMovie() {
-            alert("Filme denunciado!");
+            document.getElementById(sectionId).classList.remove('hidden');
         }
     </script>
 </body>
