@@ -27,17 +27,17 @@
             text-align: center;
         }
         .form-group {
-            margin-bottom: 50px;
+            margin-bottom: 5px;
         }
         .form-group label {
             display: block;
             margin-bottom: 5px;
         }
         .form-group input {
-            width: 100%;
+            width: 93%;
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 50px;
         }
         .form-group button {
             width: 100%;
@@ -79,14 +79,14 @@
                 localStorage.setItem('username', username);
                 localStorage.setItem('password', password); 
     alert('Login bem-sucedido!');
- 
+
                 window.location.href = 'index2ll.html';
             } else {
                 alert('Por favor, preencha todos os campos.');
             }
         }
 
- 
+
         document.addEventListener('DOMContentLoaded', (event) => {
             const username = localStorage.getItem('username');
             if (username) {
