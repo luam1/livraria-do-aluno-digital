@@ -58,11 +58,10 @@
     </header>
     <div class="container">
         <div class="content">
-            <h2>Título do Livro</h2>
-            <p><strong>Autor:</strong> Nome do Autor</p>
-            <button onclick="showSection('resumo')">Resumo</button>
-            <button onclick="showSection('autor')">Sobre o Autor</button>
-            <button onclick="showSection('comentarios')">Comentários</button>
+            <button onclick="showSection('a1')">Recen Lançados</button>
+            <button onclick="showSection('a2')">Clasicos</button>
+            <button onclick="showSection('a3')">Mais Lidos</button>
+            <button onclick="showSection('a4')">outros generos</button>
 
             <div id="resumo" class="hidden">
                 
@@ -78,9 +77,10 @@
 
     <script>
         function showSection(sectionId) {
-            document.getElementById('resumo').classList.add('hidden');
-            document.getElementById('autor').classList.add('hidden');
-            document.getElementById('comentarios').classList.add('hidden');
+            document.getElementById('a1').classList.add('hidden');
+            document.getElementById('a2').classList.add('hidden');
+            document.getElementById('a3').classList.add('hidden');
+            document.getElementById('a4').classList.add('hidden');
 
             document.getElementById(sectionId).classList.remove('hidden');
         }
