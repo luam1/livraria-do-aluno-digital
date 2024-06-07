@@ -1,1 +1,92 @@
-ma
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locação de Filmes</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #333;
+            border-radius: 8px;
+        }
+        .title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .details {
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button.rent {
+            background-color: #ff0000;
+            color: white;
+        }
+        button.favorite {
+            background-color: #ff0000;
+            color: white;
+        }
+        button.stream {
+            background-color: #ff0000;
+            color: white;
+        }
+        button.report {
+            background-color: #ff0000;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title"></div>
+        <div class="details">
+            <p><strong>Diretor:</strong></p>
+            <p><strong>Ano:</strong></p>
+            <p><strong>Gênero:</strong></p>
+            <p><strong>Sinopse:</strong></p>
+        </div>
+        <div class="buttons">
+            <button class="rent" onclick="rentMovie()">Alugar Filme</button>
+            <button class="favorite" onclick="markFavorite()">Marcar como Favorito</button>
+            <button class="stream" onclick="streamMovie()">Transmitir</button>
+            <button class="report" onclick="reportMovie()">Denunciar</button>
+        </div>
+    </div>
+
+    <script>
+        function rentMovie() {
+            alert("Filme alugado com sucesso!");
+        }
+
+        function markFavorite() {
+            alert("Filme marcado como favorito!");
+        }
+
+        function streamMovie() {
+            alert("Iniciando transmissão do filme!");
+        }
+
+        function reportMovie() {
+            alert("Filme denunciado!");
+        }
+    </script>
+</body>
+</html>
