@@ -62,10 +62,27 @@
 </header>
 
 <nav>
-  <a href="index3.html">Novidades</a>
+  <div class="container">
+    <div class="content">
+        <button onclick="showSection('b1')">Recen Lançados</button>
+        <button onclick="showSection('b2')">Clássicos Literários</button>
+        <button onclick="showSection('b3')">Mais Lidos</button>
+        <button onclick="showSection('b4')">outros generos</button>
+        
+  <div id="b1" class="hidden">
+    <a href="index3.html">Novidades</a>
+  </div>
+  <div id="b2" class="hidden">
   <a href="index4.html">Mais Vendidos</a>
+  </div>
+  <div id="b3" class="hidden">
   <a href="index5.html">Ofertas</a>
+  </div>
+  <div id="b4" class="hidden">
   <a href="index6.html">Contato</a>
+  </div>
+  
+ 
 </nav>
 
 <div class="container">
@@ -85,6 +102,16 @@
     
   </section>
 </div>
+<script>
+        function showSection(sectionId) {
+            document.getElementById('b1').classList.add('hidden');
+            document.getElementById('b2').classList.add('hidden');
+            document.getElementById('b3').classList.add('hidden');
+            document.getElementById('b4').classList.add('hidden');
+
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+</script>
 
 <footer>
   <p>© 2024 </p>
