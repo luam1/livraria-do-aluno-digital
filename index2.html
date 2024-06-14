@@ -113,5 +113,28 @@
   <p>© 2024 </p>
 </footer>
 
+<script>
+let currentIndex = 0; 
+
+document.querySelector('.prev').addEventListener('click', () => {
+    const items = document.querySelectorAll('.item');
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+    updateCarrossel();
+}); 
+
+document.querySelector('.next').addEventListener('click', () => {
+    const items = document.querySelectorAll('.item');
+    currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+    updateCarrossel();
+}); 
+
+function updateCarrossel() {
+    const items = document.querySelectorAll('.item');
+    items.forEach((item, index) => {
+        item.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+    });
+}
+</script>
+
 </body>
 </html>
