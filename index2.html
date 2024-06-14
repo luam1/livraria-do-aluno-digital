@@ -85,7 +85,7 @@
 <div class="carrossel">
   <button class="prev"><img src="" height="10" width="10"></button>
         <div class="carrossel-container">
-            <div class="item">Item 1</div>
+            <div class="item"><button onclick="window.location.href=''"><img src="" height="400" width="250"></button></div>
             <div class="item">Item 2</div>
             <div class="item">Item 3</div>
             <div class="item">Item 3</div>
@@ -116,7 +116,7 @@ document.querySelector('.next').addEventListener('click', () => {
     updateCarrossel();
 }); 
 
-function updateCarrossel() {
+function updateCarrossel() {<button onclick="window.location.href=''"><img src="" height="400" width="250"></button>
     const items = document.querySelectorAll('.item');
     items.forEach((item, index) => {
         item.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
@@ -126,3 +126,21 @@ function updateCarrossel() {
 
 </body>
 </html>
+
+
+
+
+<front color="white"><h1>COMEDIA</h1></front>
+    <div style="display: flex;">
+           <div style="flex: 1;">       
+                    <div class="button"> 
+                        <button onclick="window.location.href=''"><img src="" height="400" width="250"></button>
+                        <button onclick="window.location.href='https://a2-vert.vercel.app/'"><img src="https://br.web.img2.acsta.net/r_512_288/medias/nmedia/18/64/51/22/18799421.jpg" height="400" width="250"></button>
+                        <button onclick="window.location.href='https://a3-virid.vercel.app/'"><img src="https://observatoriodatv.uol.com.br/wp-content/uploads/2020/07/O-Pequenino-1024x533.jpg" height="400" width="250"></button>
+                        <button onclick="window.location.href='https://a4-mu.vercel.app/'"><img src="https://www.primevideo.com/-/pt/detail/Super-Her%C3%B3i---O-Filme/0S6PC2IVUB71U16GTVHT3S6JC8" alt="" height="400" width="250"></button>
+                        <button onclick="window.location.href='https://a4-mu.vercel.app/'"><img src="https://play-lh.googleusercontent.com/tl9S_BTuJm6nh-cGfQ4JJY9u9_x2bK8HSXUUMzck0r-tPfe5Yo8ZUeikQPdoTzZUlSk" alt="" height="400" width="250"></button>
+                        <button onclick="window.location.href='https://a4-mu.vercel.app/'"><img src="https://play-lh.googleusercontent.com/KhHyR7fWNscxwrbWB-lmNSyfTJ40XE3MGt-3D-CMJdCFzmySLCrKoeUHQObwmEwvK2s" alt="" height="400" width="250"></button>
+                        <button onclick="window.location.href='https://a4-mu.vercel.app/'"><img src="https://images-americanas.b2w.io/produtos/117637785/imagens/dvd-todo-mundo-em-panico-5/117637785_1_xlarge.jpg" alt="" height="400" width="250"></button>
+                    </div>
+                </div>
+    </div>
