@@ -16,7 +16,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: ;
+            align-items: center;
             background-color: #00308a;
             padding: 20px 20px;
         }
@@ -123,10 +123,8 @@
             color: white;
             text-align: center;
             padding: 1px;
-            position: fixed;
-            bottom: 0;
-            width: 100%; 
-}
+            position: fixed;   
+        }
     </style>
 </head>
 <body>
@@ -140,9 +138,7 @@
             <input type="text" placeholder="Buscar livros...">
             <button type="submit">Buscar</button>
         </div>
-    </header>
- 
-    
+    </header> 
 
     <div class="hero" id="home">
         <div class="container">
@@ -211,15 +207,7 @@
             </div>
             <div class="product">
                 <img src="https://m.media-amazon.com/images/I/815Bx8hFodL._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Livro 3" height="" width="194">
-                <h3>Livro 10</h3>document.querySelectorAll('nav a').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-        
-                        document.querySelector(this.getAttribute('href')).scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    });
-                });
+                <h3>Livro 10</h3>
                 <p>Autor: Autor 3</p>
                 <button onclick="alert('Livro 6 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
             </div>
