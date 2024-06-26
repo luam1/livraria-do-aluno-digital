@@ -27,46 +27,46 @@
             justify-content: space-between;
         }
 
-        .search-bar {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+        search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-        .search-bar input {
-            padding: 8px 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            outline: none;
-            font-size: 16px;
-        }
+        search-bar input {
+            padding: 8px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+        }
 
-        .search-bar button {
-            padding: 8px 15px;
-            border: none;
-            background-color: #333;
-            color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
+        search-bar button {
+            padding: 8px 15px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
 
-        .search-bar button:hover {
-            background-color: #555;
-        }
+        search-bar button:hover {
+            background-color: #555;
+        }
 
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            width: 50%; 
-            margin: 0 auto;
-        } 
+        button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 50%; 
+            margin: 0 auto;
+        } 
 
-        .button-container button {
-            padding: 10px 20px;
-            font-size: 16px;
-        }
+        button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
 
         .container {
             width: 80%;
@@ -130,17 +130,17 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav class="nav">
-            <a href="#">Início</a>
-            <a href="#">Sobre</a>
-            <a href="#">Livros</a>
-        </nav>
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar livros...">
-            <button type="submit">Buscar</button>
-        </div>
-    </header>
+    <header>
+        <nav class="nav">
+            <a href="#">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Livros</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar livros...">
+            <button type="submit">Buscar</button>
+        </div>
+    </header>
  
     
 
@@ -211,7 +211,15 @@
             </div>
             <div class="product">
                 <img src="https://m.media-amazon.com/images/I/815Bx8hFodL._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Livro 3" height="" width="194">
-                <h3>Livro 10</h3>
+                <h3>Livro 10</h3>document.querySelectorAll('nav a').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+        
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                });
                 <p>Autor: Autor 3</p>
                 <button onclick="alert('Livro 6 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
             </div>
