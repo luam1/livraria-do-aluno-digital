@@ -160,7 +160,12 @@
             <button type="submit">Buscar</button>
         </div>
     </header> 
-
+<div id="content">
+    <div id="tab1" class="tab active">
+        <h2>Conteúdo da Aba 1</h2>
+        <p>Este é o conteúdo da primeira aba.</p>
+    </div>
+</div>
     <div class="hero" id="home">
         <div class="container">
             <h1>welcome to stories in the shadows</h1>
@@ -304,13 +309,15 @@
     </div>
 
     <footer><p>&copy; 2024 </p></footer>            
-<div id="content">
-    <div id="tab1" class="tab active">
-        <h2>Conteúdo da Aba 1</h2>
-        <p>Este é o conteúdo da primeira aba.</p>
-    </div>
-</div>
+
     <script>
+    function openTab(tabId) {
+        var tabs = document.getElementsByClassName('tab');
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove('active');
+        }
+        document.getElementById(tabId).classList.add('active');
+    }
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -320,13 +327,6 @@
                 });
             });
         });
-    function openTab(tabId) {
-        var tabs = document.getElementsByClassName('tab');
-        for (var i = 0; i < tabs.length; i++) {
-            tabs[i].classList.remove('active');
-        }
-        document.getElementById(tabId).classList.add('active');
-    }
     </script>
 </body>
 </html>
