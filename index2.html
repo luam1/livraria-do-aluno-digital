@@ -27,27 +27,6 @@
             justify-content: space-between;
         }
 
-        .tab {
-            display: none;
-        } 
-
-        .tab.active {
-            display: block;
-        } 
-
-        .menu {
-            cursor: pointer;
-            padding: 10px;
-            background-color: #f1f1f1;
-            border: 1px solid #ccc;
-            display: inline-block;
-            margin-right: 5px;
-        } 
-
-        .menu:hover {
-            background-color: #ddd;
-        }
-
         search-bar {
             display: flex;
             align-items: center;
@@ -310,13 +289,6 @@
     <footer><p>&copy; 2024 </p></footer>            
 
     <script>
-    function openTab(tabId) {
-        var tabs = document.getElementsByClassName('tab');
-        for (var i = 0; i < tabs.length; i++) {
-            tabs[i].classList.remove('active');
-        }
-        document.getElementById(tabId).classList.add('active');
-    }
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
