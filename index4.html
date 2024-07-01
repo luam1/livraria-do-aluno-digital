@@ -19,14 +19,32 @@
         header {
             background: #00308a;
             color: #fff;
-            padding-top: 100px;
+            padding-top: 20px;
             min-height: 70px;
             border-bottom: #77aaff 3px solid;
-        }
-        header a, header h1 {
             text-align: center;
+        }
+        header h1 {
             color: #fff;
             text-decoration: none;
+        }
+        .search-bar {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .search-bar input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .search-bar button {
+            width: 15%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #76a6ff;
+            color: #000;
+            border: none;
+            cursor: pointer;
         }
         .content {
             padding: 20px;
@@ -53,99 +71,78 @@
 <body>
     <header>
         <div class="container">
-            <h1></h1>
+            <h1>Livraria Digital</h1>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Pesquisar livros...">
+                <button onclick="searchBooks()">Pesquisar</button>
+            </div>
         </div>
     </header>
     <div class="container">
         <div class="content">
             <button onclick="showSection('a1')">Terror</button>
             <button onclick="showSection('a2')">Clássicos</button>
-            
             <div id="a1" class="hidden">
-<button>aisnnshzusgsvzjsyvsvs</button>
+                <button>Livro de Terror 1</button>
             </div>
-            <p></p>
             <div id="a2" class="hidden">
-
+                <button>Livro Clássico 1</button>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="content">
-            <button onclick="showSection('a3')">Misterio</button>
+            <button onclick="showSection('a3')">Mistério</button>
             <button onclick="showSection('a4')">Romance</button>
-
             <div id="a3" class="hidden">
-
+                <button>Livro de Mistério 1</button>
             </div>
-            <p></p>
             <div id="a4" class="hidden">
-
+                <button>Livro de Romance 1</button>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="content">
-            <button onclick="showSection('a5')">Recen Lançados</button>
+            <button onclick="showSection('a5')">Recentes Lançados</button>
             <button onclick="showSection('a6')">Clássicos Literários</button>
-
             <div id="a5" class="hidden">
-
+                <button>Livro Recente 1</button>
             </div>
-            <p></p>
             <div id="a6" class="hidden">
-
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="content">
-            <button onclick="showSection('a7')">Recen Lançados</button>
-            <button onclick="showSection('a8')">Clássicos Literários</button>
-
-            <div id="a7" class="hidden">
-
-            </div>
-            <p></p>
-            <div id="a8" class="hidden">
-
+                <button>Clássico Literário 1</button>
             </div>
         </div>
     </div>
 
     <script>
         function showSection(sectionId) {
-            document.getElementById('a1').classList.add('hidden');
-            document.getElementById('a2').classList.add('hidden');
-
-document.getElementById(sectionId).classList.remove('hidden');
-        }
-
-function showSection(sectionId) {
-            document.getElementById('a3').classList.add('hidden');
-            document.getElementById('a4').classList.add('hidden');
-
-document.getElementById(sectionId).classList.remove('hidden');
-        }
-
-function showSection(sectionId) {
-            document.getElementById('a5').classList.add('hidden');
-            document.getElementById('a6').classList.add('hidden');
-
-document.getElementById(sectionId).classList.remove('hidden');
-        }
-           
-function showSection(sectionId) {
- document.getElementById('a7').classList.add('hidden');
-            document.getElementById('a8').classList.add('hidden');
-
-document.getElementById(sectionId).classList.remove('hidden');
-        }
-
-function showSection(sectionId) {
-            document.getElementById('a9').classList.add('hidden');
-            document.getElementById('a10').classList.add('hidden');
+            var sections = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6'];
+            sections.forEach(function(id) {
+                document.getElementById(id).classList.add('hidden');
+            });
             document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        function searchBooks() {
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var sections = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6'];
+            sections.forEach(function(id) {
+                var section = document.getElementById(id);
+                var buttons = section.getElementsByTagName('button');
+                var found = false;
+                for (var i = 0; i < buttons.length; i++) {
+                    if (buttons[i].textContent.toLowerCase().includes(input)) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
         }
     </script>
 </body>
