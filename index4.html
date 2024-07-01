@@ -1,243 +1,243 @@
-<!DOCTYPE html>
+Corrija os erros do codigo a seguir <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livraria Digital</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 100%;
-            margin: auto;
-            overflow: hidden;
-            padding: 0px;
-        }
-        header {
-            background: #00308a;
-            color: #fff;
-            padding: 20px 0;
-            border-bottom: #77aaff 5px solid;
-            text-align: center;
-        }
-        header h1 {
-            color: #fff;
-            margin: 0;
-        }
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .search-bar input {
-            padding: 10px 15px;
-            border: 1px solid #77aaff;
-            border-radius: 50px 0 0 50px;
-            outline: none;
-            font-size: 16px;
-            width: 300px;
-        }
-        .search-bar button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #77aaff;
-            color: #fff;
-            border-radius: 0 50px 50px 0;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        .search-bar button:hover {
-            background-color: #00308a;
-        }
-        .content {
-            background: #fff;
-            padding: 8px;
-            margin-top: 8px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        button {
-            background-color: #76a6ff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0px;
+        }
+        header {
+            background: #00308a;
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: #77aaff 5px solid;
+            text-align: center;
+        }
+        header h1 {
+            color: #fff;
+            margin: 0;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .search-bar input {
+            padding: 10px 15px;
+            border: 1px solid #77aaff;
+            border-radius: 50px 0 0 50px;
+            outline: none;
+            font-size: 16px;
+            width: 300px;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #77aaff;
+            color: #fff;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .search-bar button:hover {
+            background-color: #00308a;
+        }
+        .content {
+            background: #fff;
+            padding: 8px;
+            margin-top: 8px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #76a6ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Livraria Digital</h1>
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Buscar livros...">
-            <button type="button" onclick="searchBooks()">Buscar</button>
-        </div>
-    </header>
-    <div class="container">
-        <div class="content">
-            <button onclick="showSection('a1')">Terror</button>
-            <button onclick="showSection('a2')">Clássicos</button>
-            <button onclick="showSection('a3')">Mistério</button>
-                        <div id="a1" class="hidden">
-                <button>Livro de Terror 1</button>
-                <button>Livro de Terror 2</button>
-                <button>Livro de Terror 3</button>
-            </div>
-            <div id="a2" class="hidden">
-                <button>Livro Clássico 1</button>
-                <button>Livro Clássico 2</button>
-                <button>Livro Clássico 3</button>
-            </div>
-            <div id="a3" class="hidden">
-                <button>Livro de Mistério 1</button>
-                <button>Livro de Mistério 2</button>
-                <button>Livro de Mistério 3</button>
-            </div> 
+    <header>
+        <h1>Livraria Digital</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar livros...">
+            <button type="button" onclick="searchBooks()">Buscar</button>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <button onclick="showSection('a1')">Terror</button>
+            <button onclick="showSection('a2')">Clássicos</button>
+            <button onclick="showSection('a3')">Mistério</button>
+                        <div id="a1" class="hidden">
+                <button>Livro de Terror 1</button>
+                <button>Livro de Terror 2</button>
+                <button>Livro de Terror 3</button>
+            </div>
+            <div id="a2" class="hidden">
+                <button>Livro Clássico 1</button>
+                <button>Livro Clássico 2</button>
+                <button>Livro Clássico 3</button>
+            </div>
+            <div id="a3" class="hidden">
+                <button>Livro de Mistério 1</button>
+                <button>Livro de Mistério 2</button>
+                <button>Livro de Mistério 3</button>
+            </div>
 
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="content">
-            <button onclick="showSection('a4')">Ficção Científica</button>
-            <button onclick="showSection('a5')">Fantasia</button>
-            <button onclick="showSection('a6')">Romance</button> 
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <button onclick="showSection('a4')">Ficção Científica</button>
+            <button onclick="showSection('a5')">Fantasia</button>
+            <button onclick="showSection('a6')">Romance</button>
 
-            <div id="a4" class="hidden">
-                <button>Livro de Ficção Científica 1</button>
-                <button>Livro de Ficção Científica 2</button>
-                <button>Livro de Ficção Científica 3</button>
-            </div>
-            <div id="a5" class="hidden">
-                <button>Livro de Fantasia 1</button>
-                <button>Livro de Fantasia 2</button>
-                <button>Livro de Fantasia 3</button>
-            </div>
-            <div id="a6" class="hidden">
-                <button>Livro de Romance 1</button>
-                <button>Livro de Romance 2</button>
-                <button>Livro de Romance 3</button>
-            </div>
-        </div>
-    </div>
+            <div id="a4" class="hidden">
+                <button>Livro de Ficção Científica 1</button>
+                <button>Livro de Ficção Científica 2</button>
+                <button>Livro de Ficção Científica 3</button>
+            </div>
+            <div id="a5" class="hidden">
+                <button>Livro de Fantasia 1</button>
+                <button>Livro de Fantasia 2</button>
+                <button>Livro de Fantasia 3</button>
+            </div>
+            <div id="a6" class="hidden">
+                <button>Livro de Romance 1</button>
+                <button>Livro de Romance 2</button>
+                <button>Livro de Romance 3</button>
+            </div>
+        </div>
+    </div>
 <div class="container">
-        <div class="content">
-            <button onclick="showSection('a7')">aventura</button>
-            <button onclick="showSection('a8')">Drama</button>
-            <button onclick="showSection('a9')">Comedia</button>
-            <div id="a7" class="hidden">
-                <button>Livro de Terror 1</button>
-                <button>Livro de Terror 2</button>
-                <button>Livro de Terror 3</button>
-            </div>
-            <div id="a8" class="hidden">
-                <button>Livro Clássico 1</button>
-                <button>Livro Clássico 2</button>
-                <button>Livro Clássico 3</button>
-            </div>
-            <div id="a9" class="hidden">
-                <button>Livro de Mistério 1</button>
-                <button>Livro de Mistério 2</button>
-                <button>Livro de Mistério 3</button>
-            </div> 
+        <div class="content">
+            <button onclick="showSection('a7')">aventura</button>
+            <button onclick="showSection('a8')">Drama</button>
+            <button onclick="showSection('a9')">Comedia</button>
+            <div id="a7" class="hidden">
+                <button>Livro de Terror 1</button>
+                <button>Livro de Terror 2</button>
+                <button>Livro de Terror 3</button>
+            </div>
+            <div id="a8" class="hidden">
+                <button>Livro Clássico 1</button>
+                <button>Livro Clássico 2</button>
+                <button>Livro Clássico 3</button>
+            </div>
+            <div id="a9" class="hidden">
+                <button>Livro de Mistério 1</button>
+                <button>Livro de Mistério 2</button>
+                <button>Livro de Mistério 3</button>
+            </div>
 
-            </div>
-        </div>
-    </div>
+            </div>
+        </div>
+    </div>
 <div class="container">
-        <div class="content">
-            <button onclick="showSection('a10')">Ação</button>
-            <button onclick="showSection('a11')">Poesia</button>
-            <button onclick="showSection('a12')">Mangá</button>
-            <div id="a10" class="hidden">
-                <button>Livro de Terror 1</button>
-                <button>Livro de Terror 2</button>
-                <button>Livro de Terror 3</button>
-            </div>
-            <div id="a11" class="hidden">
-                <button>Livro Clássico 1</button>
-                <button>Livro Clássico 2</button>
-                <button>Livro Clássico 3</button>
-            </div>
-            <div id="a12" class="hidden">
-                <button>Livro de Mistério 1</button>
-                <button>Livro de Mistério 2</button>
-                <button>Livro de Mistério 3</button>
-            </div> 
+        <div class="content">
+            <button onclick="showSection('a10')">Ação</button>
+            <button onclick="showSection('a11')">Poesia</button>
+            <button onclick="showSection('a12')">Mangá</button>
+            <div id="a10" class="hidden">
+                <button>Livro de Terror 1</button>
+                <button>Livro de Terror 2</button>
+                <button>Livro de Terror 3</button>
+            </div>
+            <div id="a11" class="hidden">
+                <button>Livro Clássico 1</button>
+                <button>Livro Clássico 2</button>
+                <button>Livro Clássico 3</button>
+            </div>
+            <div id="a12" class="hidden">
+                <button>Livro de Mistério 1</button>
+                <button>Livro de Mistério 2</button>
+                <button>Livro de Mistério 3</button>
+            </div>
 
-            </div>
-        </div>
-    </div>
+            </div>
+        </div>
+    </div>
 <div class="container">
-        <div class="content">
-            <button onclick="showSection('a13')">Cronicas</button>
-            <button onclick="showSection('a14')">Gibis</button>
-            <button onclick="showSection('a15')">suspence</button>
-              <div id="a13" class="hidden">
-                <button>Livro de Terror 1</button>
-                <button>Livro de Terror 2</button>
-                <button>Livro de Terror 3</button>
-            </div>
-            <div id="a14" class="hidden">
-                <button>Livro Clássico 1</button>
-                <button>Livro Clássico 2</button>
-                <button>Livro Clássico 3</button>
-            </div>
-            <div id="a15" class="hidden">
-                <button>Livro de Mistério 1</button>
-                <button>Livro de Mistério 2</button>
-                <button>Livro de Mistério 3</button>
-            </div> 
+        <div class="content">
+            <button onclick="showSection('a13')">Cronicas</button>
+            <button onclick="showSection('a14')">Gibis</button>
+            <button onclick="showSection('a15')">suspence</button>
+              <div id="a13" class="hidden">
+                <button>Livro de Terror 1</button>
+                <button>Livro de Terror 2</button>
+                <button>Livro de Terror 3</button>
+            </div>
+            <div id="a14" class="hidden">
+                <button>Livro Clássico 1</button>
+                <button>Livro Clássico 2</button>
+                <button>Livro Clássico 3</button>
+            </div>
+            <div id="a15" class="hidden">
+                <button>Livro de Mistério 1</button>
+                <button>Livro de Mistério 2</button>
+                <button>Livro de Mistério 3</button>
+            </div>
 
-            </div>
-        </div>
-    </div> 
+            </div>
+        </div>
+    </div>
 
-    <script>
-        function showSection(sectionId) {
-            var sections = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13', 'a14', 'a15'];
-            sections.forEach(function(id) {
-                document.getElementById(id).classList.add('hidden');
-            });
-            document.getElementById(sectionId).classList.remove('hidden');
-        } 
 
-        function searchBooks() {
-            var input = document.getElementById('searchInput').value.toLowerCase();
-            var sections = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13', 'a14', 'a15'];
-            sections.forEach(function(id) {
-                var section = document.getElementByvar section = document.getElementById(id);
-                var buttons = section.getElementsByTagName('button');
-                var found = false;
-                for (var i = 0; i < buttons.length; i++) {
-                    if (buttons[i].textContent.toLowerCase().includes(input)) {
-                        found = true;
-                        break;
-                    }
-                }
-                if (found) {
-                    section.classList.remove('hidden');
-                } else {
-                    section.classList.add('hidden');
-                }
-            });
-        }
-    </script> 
+    <script>
+        function showSection(sectionId) {
+            var sections = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6'];
+            sections.forEach(function(id) {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
 
+        function searchBooks() {
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var sections = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6'];
+            sections.forEach(function(id) {
+                var section = document.getElementById(id);
+                var buttons = section.getElementsByTagName('button');
+                var found = false;
+                for (var i = 0; i < buttons.length; i++) {
+                    if (buttons[i].textContent.toLowerCase().includes(input)) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
