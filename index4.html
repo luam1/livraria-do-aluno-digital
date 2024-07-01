@@ -15,54 +15,56 @@
             width: 100%;
             margin: auto;
             overflow: hidden;
+            padding: 20px;
         }
         header {
             background: #00308a;
             color: #fff;
-            padding-top: 20px;
-            min-height: 70px;
+            padding: 20px 0;
             border-bottom: #77aaff 3px solid;
             text-align: center;
         }
         header h1 {
             color: #fff;
-            text-decoration: none;
+            margin: 0;
         }
         .search-bar {
-            display: flex;
-            align-items: center;
-        } 
-
-        .search-bar input {
-            padding: 10px;
-            border: 1px solid #000000;
-            border-radius: 50px;
-            outline: none;
-            font-size: 16px;
-        } 
-
-        .search-bar button {
-            padding: 10px 15px;
-            border: none;
-            background-color: #acacac;
-            color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        } 
-
-        .search-bar button:hover {
-            background-color: #ccc;
-        }
-        .content {
-            padding: 20px;
-            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-top: 20px;
+        }
+        .search-bar input {
+            padding: 10px 15px;
+            border: 1px solid #77aaff;
+            border-radius: 50px 0 0 50px;
+            outline: none;
+            font-size: 16px;
+            width: 300px;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #77aaff;
+            color: #fff;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .search-bar button:hover {
+            background-color: #00308a;
+        }
+        .content {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         button {
             background-color: #76a6ff;
-            color: rgb(0, 0, 0);
+            color: #fff;
             border: none;
             padding: 10px 20px;
             text-align: center;
@@ -71,6 +73,7 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
+            border-radius: 5px;
         }
         .hidden {
             display: none;
@@ -79,10 +82,11 @@
 </head>
 <body>
     <header>
-    <div class="search-bar">
-        <input type="text" placeholder="Buscar livros...">
-        <button type="submit">Buscar</button>
-    </div>
+        <h1>Livraria Digital</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar livros...">
+            <button type="button" onclick="searchBooks()">Buscar</button>
+        </div>
     </header>
     <div class="container">
         <div class="content">
