@@ -14,58 +14,27 @@
 
         header {
             display: flex;
-            flex-direction: row;
             justify-content: space-between;
             align-items: center;
             background-color: #00308a;
-            padding: 40px 40px;
+            padding: 5px 40px;
         }
 
         nav {
-            width: 100px;
             display: flex;
-            justify-content: space-between;
+            gap: 20px;
         }
 
-        search-bar {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        search-bar input {
-            padding: 16px 20px;
-            border: 1px solid #000000;
-            border-radius: 50px;
-            outline: none;
-            font-size: 38px;
-        }
-
-        search-bar button {
-            padding: 8px 15px;
-            border: none;
-            background-color: #acacac;
-            color: #fff;
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
             border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
             transition: background-color 0.3s;
         }
 
-        search-bar button:hover {
-            background-color: #ccc;
-        }
-
-        button-container {
-            display: flex;
-            justify-content: space-between;
-            width: 50%; 
-            margin: 0 auto;
-        } 
-
-        button-container button {
-            padding: 10px 20px;
-            font-size: 16px;
+        .nav-link:hover {
+            background-color: #575757;
         }
 
         .container {
@@ -84,20 +53,21 @@
             margin: 0;
         }
 
-        .products {
-            display: flex;
+        .products-container {
             overflow-x: auto;
-            padding: 20px 0;
+            white-space: nowrap;
+            margin-bottom: 20px;
         }
 
         .product {
-            flex: 0 0 auto;
+            display: inline-block;
             width: 200px;
-            margin: 10px;
+            margin: 0 10px;
             background-color: #fff;
             padding: 15px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            vertical-align: top;
         }
 
         .product img {
@@ -105,12 +75,24 @@
             height: auto;
         }
 
+        .product h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 14px;
+            color: #666;
+        }
+
         .product button {
             background-color: #00308a;
             color: #fff;
             border: none;
-            padding: 10px 15px;
+            padding: 8px 15px;
             cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
             margin-top: 10px;
         }
 
@@ -118,51 +100,142 @@
             background-color: #575757;
         }
 
-        footer { 
+        footer {
             background-color: #00308a;
             color: white;
             text-align: center;
-            padding: 1px;
-            position: fixed;   
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
-    <header>          
-        <
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar livros...">
-            <button type="submit">Buscar</button>
-        </div>
-    </header> 
+<img src="" height="" windth="">
+    <header>
+            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#books"></a>
+            <a class="nav-link" href="#children-books"></a>
+        </nav>
+    </header>
 
-</div>
     <div class="hero" id="home">
         <div class="container">
-            <h1>welcome to stories in the shadows</h1>
-            <p>Descubra uma vasta coleção de livros ao seu alcance de forma acessível e grátis.</p>              
-            <p>PS: Não assumimos responsabilidade por qualquer dado clonado</p>
+            <h1>Bem-vindo à Livraria Online</h1>
+            <p>Descubra uma vasta coleção de livros ao seu alcance de forma acessível e grátis.</p>
+            <p>PS: Não assumimos responsabilidade por qualquer dado clonado.</p>
         </div>
     </div>
 
     <div class="container">
         <h2 id="books">Livros em Destaque</h2>
-        <div class="products">
+        <div class="products-container">
             <div class="product">
-                <img src="https://m.media-amazon.com/images/I/81TmHlRleJL._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Livro 1" width="195">
-                <h3>Jujutsu no kaisen</h3>
-                <p>Autor: Gege Akutami </p>
+                <img src="https://m.media-amazon.com/images/I/81TmHlRleJL._AC_UF1000.jpg" alt="Livro 1" width="200">
+                <h3>Jujutsu no Kaisen</h3>
+                <p>Autor: Gege Akutami</p>
                 <button onclick="alert('Livro 1 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
             </div>
             <div class="product">
-                <img src="https://m.media-amazon.com/images/I/61YQD6u5liL._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Livro 2" height="" width="185">
-                <h3>Kaiju n 8</h3>
+                <img src="https://m.media-amazon.com/images/I/61YQD6u5liL._AC_UF1000.jpg" alt="Livro 2" width="191">
+                <h3>Kaiju nº 8</h3>
                 <p>Autor: Naoya Matsumoto</p>
                 <button onclick="alert('Livro 2 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
             </div>
             <div class="product">
-                <img src="https://m.media-amazon.com/images/I/91zj0WZtIYL._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Livro 3" height="" width="">
-                <h3>Divina Comedia</h3>
+                <img src="https://m.media-amazon.com/images/I/91zj0WZtIYL._AC_UF1000.jpg" alt="Livro 3" width="270">
+                <h3>Divina Comédia</h3>
+                <p>Autor: Dante Alighieri</p>
+                <button onclick="alert('Livro 3 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/81OYRZEQG7L._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Livro 3" height="" width="200">
+                <h3>Solo leving</h3>
+                <p>Autor: Chu-Gong</p>
+                <button onclick="alert('Livro 4 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/51Fe45NGwkL._SY466_.jpg" alt="Livro 3" height="" width="200">
+                <h3>A Arte da Guerra</h3>
+                <p>Autor: Sun Tzu</p>
+                <button onclick="alert('Livro 5 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/518mqZ7A31L._SY445_SX342_.jpg" alt="Livro 3" height="" width="200">
+                <h3>Harry Potter e Pedra Filosofal</h3>
+                <p>Autor: J.K Rowling</p>
+                <button onclick="alert('Livro 6 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/41kT95iZ81L._SY445_SX342_.jpg" alt="Livro 3" height="20" width="200">
+                <h3>Harry Potter e o Prisioneiro de Azkaban</h3>
+                <p>Autor: J.K Rowling</p>
+                <button onclick="alert('Livro 7 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/41RBd2DvmgL._SY445_SX342_.jpg" alt="Livro 3" height="" width="200">
+                <h3>O Senhor dos Aneis a Sociedade dos Aneis</h3>
+                <p>Autor: Tolkien</p>
+                <button onclick="alert('Livro 8 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/81slUinjTlS._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Livro 3" height="" width="200">
+                <h3>O Alquimista</h3>
+                <p>Autor: Paulo Coelho</p>
+                <button onclick="alert('Livro 9 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/815Bx8hFodL._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Livro 3" height="" width="200">
+                <h3>Livro 10</h3>
+                <p>Autor: Autor 3</p>
+                <button onclick="alert('Livro 10 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/81diwihAz6L._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Livro 3" height="20" width="200">
+                <h3>Livro 11</h3>
+                <p>Autor: Autor 3</p>
+                <button onclick="alert('Livro 11 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/81022XMXiKL._SY466_.jpg" alt="Livro 3" height="" width="200">
+                <h3>Livro 12</h3>
+                <p>Autor: Autor 3</p>
+                <button onclick="alert('Livro 12 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://xfs-n11.xfsbb.com/thumb/W600/ampi/99b/99b2792b329e798776ae91e49c586b0eea44d99b_600_900_522160.jpeg" alt="Livro 3" height="" width="200">
+                <h3>Livro 13</h3>
+                <p>Autor: Autor 3</p>
+                <button onclick="alert('Livro 13 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThPHYHLodx69-90NPjqyU_n_DoOKcjblr8Qw&s" alt="Livro 3" height="" width="200">
+                <h3>Livro 14</h3>
+                <p>Autor: </p>
+                <button onclick="alert('Livro 14 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </div>
+
+     <div class="container">
+        <h2 id="books">Livros Infantis</h2>
+        <div class="products-container">
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/81TmHlRleJL._AC_UF1000.jpg" alt="Livro 1" width="200">
+                <h3>Jujutsu no Kaisen</h3>
+                <p>Autor: Gege Akutami</p>
+                <button onclick="alert('Livro 1 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/61YQD6u5liL._AC_UF1000.jpg" alt="Livro 2" width="200">
+                <h3>Kaiju nº 8</h3>
+                <p>Autor: Naoya Matsumoto</p>
+                <button onclick="alert('Livro 2 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/91zj0WZtIYL._AC_UF1000.jpg" alt="Livro 3" width="200">
+                <h3>Divina Comédia</h3>
                 <p>Autor: Dante Alighieri</p>
                 <button onclick="alert('Livro 3 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
             </div>
@@ -232,55 +305,11 @@
                 <p>Autor: </p>
                 <button onclick="alert('Livro 14 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
             </div>
-
-            </div>
         </div>
     </div>
 
-    <div class="container">
-        <h2 id="books">Livros Infantis</h2>
-        <div class="products">
-            <div class="product">
-                <img src="" alt="Livro 1" height="" windth="">
-                <h3>Livro 1</h3>
-                <p>Autor: Autor 1</p>
-                <button onclick="alert('Livro 1 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 2">
-                <h3>Livro 2</h3>
-                <p>Autor: Autor 2</p>
-                <button onclick="alert('Livro 2 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 3">
-                <h3>Livro 3</h3>
-                <p>Autor: Autor 3</p>
-                <button onclick="alert('Livro 3 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 3">
-                <h3>Livro 3</h3>
-                <p>Autor: Autor 3</p>
-                <button onclick="alert('Livro 4 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 3">
-                <h3>Livro 3</h3>
-                <p>Autor: Autor 3</p>
-                <button onclick="alert('Livro 5 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 3">
-                <h3>Livro 3</h3>
-                <p>Autor: Autor 3</p>
-                <button onclick="alert('Livro 6 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-        </div>
-    </div>
-
-    <footer><p>&copy; 2024 </p></footer>            
-
+    <footer>&copy; 2024 Livraria Online</footer>
+..................................................................................
     <script>
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
