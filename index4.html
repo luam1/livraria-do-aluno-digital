@@ -12,14 +12,14 @@
             background-color: #f4f4f4;
         }
         .container {
-            width: 80%;
+            width: 100%;
             margin: auto;
             overflow: hidden;
         }
         header {
-            background: #333;
+            background: #00308a;
             color: #fff;
-            padding-top: 30px;
+            padding-top: 100px;
             min-height: 70px;
             border-bottom: #77aaff 3px solid;
         }
@@ -34,8 +34,8 @@
             margin-top: 20px;
         }
         button {
-            background-color: #333;
-            color: white;
+            background-color: #76a6ff;
+            color: rgb(0, 0, 0);
             border: none;
             padding: 10px 20px;
             text-align: center;
@@ -53,39 +53,36 @@
 <body>
     <header>
         <div class="container">
-            <h1>Resumo do Livro</h1>
+            <h1></h1>
         </div>
     </header>
     <div class="container">
         <div class="content">
-            <h2>Título do Livro</h2>
-            <p><strong>Autor:</strong> Nome do Autor</p>
-            <button onclick="showSection('resumo')">Resumo</button>
-            <button onclick="showSection('autor')">Sobre o Autor</button>
-            <button onclick="showSection('comentarios')">Comentários</button>
+            <button onclick="showSection('a1')">Recen Lançados</button>
+            <button onclick="showSection('a2')">Clássicos Literários</button>
+            
+            <div id="a1" class="hidden">
 
-            <div id="resumo" class="hidden">
-                <h3>Resumo</h3>
-                <p>Este é o resumo do livro. Ele descreve a trama principal, os personagens e o ambiente em que a história se passa...</p>
             </div>
-            <div id="autor" class="hidden">
-                <h3>Sobre o Autor</h3>
-                <p>Informações sobre o autor do livro, incluindo biografia, outras obras publicadas, prêmios recebidos...</p>
-            </div>
-            <div id="comentarios" class="hidden">
-                <h3>Comentários</h3>
-                <p>Comentário 1: "Uma leitura fascinante!"</p>
-                <p>Comentário 2: "Gostei muito do desenvolvimento dos personagens..."</p>
-                <p>Comentário 3: "Uma obra-prima da literatura moderna."</p>
+            <p></p>
+            <div id="a2" class="hidden">
+
             </div>
         </div>
     </div>
 
     <script>
         function showSection(sectionId) {
-            document.getElementById('resumo').classList.add('hidden');
-            document.getElementById('autor').classList.add('hidden');
-            document.getElementById('comentarios').classList.add('hidden');
+            document.getElementById('a1').classList.add('hidden');
+            document.getElementById('a2').classList.add('hidden');
+            document.getElementById('a3').classList.add('hidden');
+            document.getElementById('a4').classList.add('hidden');
+            document.getElementById('a5').classList.add('hidden');
+            document.getElementById('a6').classList.add('hidden');
+            document.getElementById('a7').classList.add('hidden');
+            document.getElementById('a8').classList.add('hidden');
+            document.getElementById('a9').classList.add('hidden');
+            document.getElementById('a10').classList.add('hidden');
 
             document.getElementById(sectionId).classList.remove('hidden');
         }
