@@ -14,14 +14,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
 
         .container {
             width: 100%;
             max-width: 800px;
             background-color: #fff;
-            padding: 30px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -38,7 +39,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .avatar {
@@ -46,7 +48,7 @@
             height: 80px;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 20px;
+            margin-bottom: 10px;
         }
 
         .avatar img {
@@ -57,12 +59,12 @@
 
         /* Estilos para informações de contato */
         .contact-info {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-align: left;
         }
 
         .contact-info h2 {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             margin-bottom: 10px;
             color: #555;
         }
@@ -78,7 +80,7 @@
 
         .social-links a {
             display: inline-block;
-            margin: 0 10px;
+            margin: 0 5px;
             color: #007bff;
             text-decoration: none;
             transition: color 0.3s;
@@ -94,7 +96,7 @@
         }
 
         .contact-form h2 {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             margin-bottom: 20px;
             color: #555;
         }
@@ -108,23 +110,24 @@
         .contact-form input[type="text"],
         .contact-form input[type="email"],
         .contact-form textarea {
-            width: calc(100% - 16px);
+            width: 100%;
             padding: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 1rem;
+            box-sizing: border-box;
         }
 
         .contact-form textarea {
-            height: 120px;
+            height: 100px;
             resize: vertical;
         }
 
         .contact-form input[type="submit"] {
             background-color: #4CAF50;
             color: white;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -134,6 +137,31 @@
 
         .contact-form input[type="submit"]:hover {
             background-color: #45a049;
+        }
+
+        /* Ajustes para dispositivos móveis */
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .avatar {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .contact-info, .contact-form {
+                text-align: center;
+            }
+
+            .contact-info p, .contact-form label {
+                text-align: left;
+            }
+
+            .social-links a {
+                margin: 0 5px;
+            }
         }
     </style>
 </head>
