@@ -1,214 +1,117 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livraria Online</title>
+    <title>Contato - Livraria</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
-
-        nav {
-            background-color: #00308a;
-            color: #fff;
-            padding: 10px 20px;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            padding: 5px 10px;
-        }
-
-        nav a:hover {
-            background-color: #575757;
-            border-radius: 5px;
-        }
-
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        .hero {
-            background-color: #e2e2e2;
-            padding: 50px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            margin: 0;
-        }
-
-        .products {
-            display: flex;
-            overflow-x: auto;
-            padding: 20px 0;
-        }
-
-        .product {
-            flex: 0 0 auto;
-            width: 200px;
-            margin: 10px;
+            max-width: 800px;
+            margin: 20px auto;
             background-color: #fff;
-            padding: 15px;
+            padding: 20px;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
             text-align: center;
         }
-
-        .product img {
-            max-width: 100%;
-            height: auto;
+        .contact-info {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
         }
-
-        .product button {
-            background-color: #00308a;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
+        .contact-info h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .social-links {
             margin-top: 10px;
         }
-
-        .product button:hover {
-            background-color: #575757;
+        .social-links a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #007bff;
+            text-decoration: none;
         }
-
-        footer { 
-            background-color: #00308a;
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        .contact-form {
+            margin-top: 20px;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .contact-form input[type="text"], 
+        .contact-form input[type="email"], 
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        .contact-form textarea {
+            height: 120px;
+        }
+        .contact-form input[type="submit"] {
+            background-color: #4CAF50;
             color: white;
-            text-align: center;
-            padding: 1px;
-            position: fixed;
-            bottom: 0;
-            width: 100%; 
-}
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
-    <nav>
-            <a href="#home">Home</a>
-            <a href="#about">Sobre</a>
-            <a href="#books">Livros</a>
-    </nav>
-
-    <div class="hero" id="home">
-        <div class="container">
-            <h1>welcome to stories in the shadows</h1>
-            <p>Descubra uma vasta coleção de livros ao seu alcance de forma acessível e grátis.</p>              
-            <p>PS: Não assumimos responsabilidade por qualquer dado clonado</p>
-        </div>
-    </div>
-
     <div class="container">
-        <h2 id="books">Livros em Destaque</h2>
-        <div class="products">
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 1">
-                <h3>Livro 1</h3>
-                <p>Autor: Autor 1</p>
-                <button onclick="alert('Livro 1 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 2">
-                <h3>Livro 2</h3>
-                <p>Autor: Autor 2</p>
-                <button onclick="alert('Livro 2 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 3">
-                <h3>Livro 3</h3>
-                <p>Autor: Autor 3</p>
-                <button onclick="alert('Livro 3 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 3">
-                <h3>Livro 3</h3>
-                <p>Autor: Autor 3</p>
-                <button onclick="alert('Livro 3 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 3">
-                <h3>Livro 3</h3>
-                <p>Autor: Autor 3</p>
-                <button onclick="alert('Livro 3 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 3">
-                <h3>Livro 3</h3>
-                <p>Autor: Autor 3</p>
-                <button onclick="alert('Livro 3 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+        <h1>Entre em Contato</h1>
+
+        <div class="contact-info">
+            <h2>Informações para Desenvolvedor</h2>
+            <p>Nome: João Silva</p>
+            <p>Email: joao.silva@seudominio.com</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/joaosilva" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/joaosilva" target="_blank">Twitter</a>
+                <a href="mailto:joao.silva@seudominio.com">Email</a>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <h2 id="books">Livros Infantis</h2>
-        <div class="products">
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 1">
-                <h3>Livro 1</h3>
-                <p>Autor: Autor 1</p>
-                <button onclick="alert('Livro 1 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 2">
-                <h3>Livro 2</h3>
-                <p>Autor: Autor 2</p>
-                <button onclick="alert('Livro 2 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 3">
-                <h3>Livro 3</h3>
-                <p>Autor: Autor 3</p>
-                <button onclick="alert('Livro 3 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 3">
-                <h3>Livro 3</h3>
-                <p>Autor: Autor 3</p>
-                <button onclick="alert('Livro 3 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 3">
-                <h3>Livro 3</h3>
-                <p>Autor: Autor 3</p>
-                <button onclick="alert('Livro 3 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Livro 3">
-                <h3>Livro 3</h3>
-                <p>Autor: Autor 3</p>
-                <button onclick="alert('Livro 3 adicionado ao carrinho!')">Adicionar ao Carrinho</button>
-            </div>
+        <div class="contact-form">
+            <h2>Formulário de Contato</h2>
+            <form action="#" method="post">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <input type="submit" value="Enviar Mensagem">
+            </form>
         </div>
     </div>
-
-    <footer><p>&copy; 2024 </p></footer>            
-            
-    <script>
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        function showSection(sectionId) {
-            document.getElementById('l1').classList.add('hidden');
-document.getElementById('l2').classList.add('hidden');
-document.getElementById('l3').classList.add('hidden');
-
-            document.getElementById(sectionId).classList.remove('hidden');
-        }
-    </script>
 </body>
 </html>
