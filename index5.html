@@ -1,92 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livraria Digital</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            padding: 20px;
-            max-width: 200px;
-            margin: 0 auto;
-            background-color: #333;
-            border-radius: 8px;
-        }
-        .title {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .details {
-            margin-bottom: 20px;
-        }
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        button.rent {
-            background-color: #ff0000;
-            color: white;
-        }
-        button.favorite {
-            background-color: #ff0000;
-            color: white;
-        }
-        button.stream {
-            background-color: #ff0000;
-            color: white;
-        }
-        button.report {
-            background-color: #ff0000;
-            color: white;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat e Comentários</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="title"></div>
-        <div class="details">
-            <p><strong>Diretor:</strong></p>
-            <p><strong>Ano:</strong></p>
-            <p><strong>Gênero:</strong></p>
-            <p><strong>Sinopse:</strong></p>
-        </div>
-        <div class="buttons">
-            <button class="rent" onclick="rentMovie()">Alugar Filme</button>
-            <button class="favorite" onclick="markFavorite()">Marcar como Favorito</button>
-            <button class="stream" onclick="streamMovie()">Transmitir</button>
-            <button class="report" onclick="reportMovie()">Denunciar</button>
-        </div>
-    </div>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+} 
 
-    <script>
-        function rentMovie() {
-            alert("Filme alugado com sucesso!");
-        }
+.chat-container, .comments-section, .rating-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+} 
 
-        function markFavorite() {
-            alert("Filme marcado como favorito!");
-        }
+.chat-window {
+    border: 1px solid #ccc;
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+} 
 
-        function streamMovie() {
-            alert("Iniciando transmissão do filme!");
-        }
+#chat-input, #comment-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+} 
 
-        function reportMovie() {
-            alert("Filme denunciado!");
-        }
-    </script>
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+} 
+
+button:hover {
+    background-color: #0056b3;
+} 
+
+.rating-button {
+    margin: 0 5px;
+}
+</style>
+    <div class="chat-container">
+        <div class="chat-window" id="chat-window"></div>
+        <input type="text" id="chat-input" placeholder="Digite sua mensagem">
+        <button id="send-button">Enviar</button>
+    </div> 
+
+    <div class="comments-section">
+        <h2>Comentários</h2>
+        <textarea id="comment-input" placeholder="Deixe seu comentário"></textarea>
+        <button id="comment-button">Comentar</button>
+        <div id="comments-list"></div>
+    </div> 
+
+    <div class="rating-section">
+        <h2>Avaliação</h2>
+        <button class="rating-button" data-rating="1">1</button>
+        <button class="rating-button" data-rating="2">2</button>
+        <button class="rating-button" data-rating="3">3</button>
+        <button class="rating-button" data-rating="4">4</button>
+        <button class="rating-button" data-rating="5">5</button>
+        <p id="rating-display">Avaliação atual: 0</p>
+    </div> 
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Chat functionality
+    const chatWindow = document.getElementById('chat-window');
+    const chatInput = document.getElementById('chat-input');
+    const sendButton = document.getElementById('send-button'); 
+
+    sendButton.addEventListener('click', () => {
+        const message = chatInput.value;
+        if (message.trim()) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            chatWindow.appendChild(messageElement);
+            chatInput.value = '';
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+    }); 
+
+    // Comments functionality
+    const commentInput = document.getElementById('comment-input');
+    const commentButton = document.getElementById('comment-button');
+    const commentsList = document.getElementById('comments-list'); 
+
+    commentButton.addEventListener('click', () => {
+        const comment = commentInput.value;
+        if (comment.trim()) {
+            const commentElement = document.createElement('div');
+            commentElement.textContent = comment;
+            commentsList.appendChild(commentElement);
+            commentInput.value = '';
+        }
+    }); 
+
+    // Rating functionality
+    const ratingButtons = document.querySelectorAll('.rating-button');
+    const ratingDisplay = document.getElementById('rating-display');
+    let currentRating = 0; 
+
+    ratingButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            currentRating = button.getAttribute('data-rating');
+            ratingDisplay.textContent = `Avaliação atual: ${currentRating}`;
+        });
+    });
+});
+</script>
 </body>
 </html>
