@@ -56,6 +56,19 @@
         .setting-item input[type="submit"]:hover {
             background-color: #45a049;
         }
+        .setting-item .option-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .setting-item .option-btn:last-child {
+            margin-right: 0;
+        }
     </style>
 </head>
 <body>
@@ -80,6 +93,25 @@
                 </select>
             </div>
             <div class="setting-item">
+                <label>Notificações:</label>
+                <button type="button" class="option-btn">Ativar</button>
+                <button type="button" class="option-btn">Desativar</button>
+            </div>
+            <div class="setting-item">
+                <label>Brilho:</label>
+                <button type="button" class="option-btn">Baixo</button>
+                <button type="button" class="option-btn">Médio</button>
+                <button type="button" class="option-btn">Alto</button>
+            </div>
+            <div class="setting-item">
+                <label>Idioma:</label>
+                <select id="language" name="language">
+                    <option value="en">English</option>
+                    <option value="pt" selected>Português</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+            <div class="setting-item">
                 <input type="submit" value="Salvar Configurações" onclick="saveSettings()">
             </div>
         </form>
@@ -91,9 +123,10 @@
             var siteName = document.getElementById('site-name').value;
             var email = document.getElementById('email').value;
             var currency = document.getElementById('currency').value;
+            var language = document.getElementById('language').value;
 
             // Exemplo de saída para demonstração
-            alert(`Configurações salvas!\n\nNome do Site: ${siteName}\nEmail de Contato: ${email}\nMoeda Padrão: ${currency}`);
+            alert(`Configurações salvas!\n\nNome do Site: ${siteName}\nEmail de Contato: ${email}\nMoeda Padrão: ${currency}\nIdioma: ${language}`);
         }
     </script>
 </body>
