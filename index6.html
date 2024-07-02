@@ -19,7 +19,7 @@
 
         .container {
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             background-color: #fff;
             padding: 30px;
             border-radius: 8px;
@@ -33,9 +33,32 @@
             margin-bottom: 20px;
         }
 
+        /* Cabeçalho */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* Estilos para informações de contato */
         .contact-info {
             margin-bottom: 30px;
+            text-align: left;
         }
 
         .contact-info h2 {
@@ -116,7 +139,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Entre em Contato</h1>
+        <div class="header">
+            <div class="avatar">
+                <img src="https://via.placeholder.com/80" alt="Avatar">
+            </div>
+            <h1>Entre em Contato</h1>
+        </div>
 
         <div class="contact-info">
             <h2>Informações para Desenvolvedor</h2>
