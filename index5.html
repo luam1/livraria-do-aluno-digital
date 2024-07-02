@@ -23,7 +23,6 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            max-width: 1200px;
         }
 
         .chat-container, .comments-section, .rating-section {
@@ -32,9 +31,8 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
             flex: 1;
-            min-width: 300px;
-            max-width: 400px;
         }
 
         .chat-window {
@@ -46,7 +44,7 @@
             background-color: #f9f9f9;
         }
 
-        input, textarea {
+        #chat-input, #comment-input {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -55,13 +53,12 @@
         }
 
         button {
-            padding: 10px 20px;
+            padding: 10px;
             background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
 
         button:hover {
@@ -70,15 +67,6 @@
 
         .rating-button {
             margin: 0 5px;
-            padding: 10px 15px;
-        }
-
-        .comments-section div {
-            padding: 10px;
-            margin: 5px 0;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            border: 1px solid #ccc;
         }
     </style>
 </head>
@@ -101,13 +89,11 @@
 
         <div class="rating-section">
             <h2>Avaliação</h2>
-            <div>
-                <button class="rating-button" data-rating="1">1</button>
-                <button class="rating-button" data-rating="2">2</button>
-                <button class="rating-button" data-rating="3">3</button>
-                <button class="rating-button" data-rating="4">4</button>
-                <button class="rating-button" data-rating="5">5</button>
-            </div>
+            <button class="rating-button" data-rating="1">1</button>
+            <button class="rating-button" data-rating="2">2</button>
+            <button class="rating-button" data-rating="3">3</button>
+            <button class="rating-button" data-rating="4">4</button>
+            <button class="rating-button" data-rating="5">5</button>
             <p id="rating-display">Avaliação atual: 0</p>
         </div>
     </div>
@@ -131,14 +117,7 @@
                 if (message.trim()) {
                     appendMessage(message, 'Você');
                     chatInput.value = '';
-                    chatInput.focus();
                     // Aqui você pode adicionar o envio da mensagem para um servidor, se necessário.
-                }
-            });
-
-            chatInput.addEventListener('keypress', (event) => {
-                if (event.key === 'Enter') {
-                    sendButton.click();
                 }
             });
 
@@ -154,14 +133,6 @@
                     commentElement.textContent = comment;
                     commentsList.appendChild(commentElement);
                     commentInput.value = '';
-                    commentInput.focus();
-                }
-            });
-
-            commentInput.addEventListener('keypress', (event) => {
-                if (event.key === 'Enter' && !event.shiftKey) {
-                    event.preventDefault();
-                    commentButton.click();
                 }
             });
 
