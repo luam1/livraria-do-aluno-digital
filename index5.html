@@ -176,27 +176,55 @@
             const commentButton = document.getElementById('comment-button');
             const commentsList = document.getElementById('comments-list');
 
-            commentButton.addEventListener('click', () => {
-                const comment = commentInput.value;
-                if (comment.trim()) {
+            const loadComments = () => {
+                const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+                commentsList.innerHTML = '';
+                comments.forEach(comment => {
                     const commentElement = document.createElement('div');
                     commentElement.textContent = comment;
                     commentsList.appendChild(commentElement);
+                });
+            };
+
+            const saveComment = (comment) => {
+                const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+                comments.push(comment);
+                localStorage.setItem('comments', JSON.stringify(comments));
+            };
+
+            commentButton.addEventListener('click', () => {
+                const comment = commentInput.value;
+                if (comment.trim()) {
+                    saveComment(comment);
+                    loadComments();
                     commentInput.value = '';
                 }
             });
 
+            loadComments();
+
             // Rating functionality
             const ratingButtons = document.querySelectorAll('.rating-button');
             const ratingDisplay = document.getElementById('rating-display');
-            let currentRating = 0;
+
+            const loadRating = () => {
+                const rating = localStorage.getItem('rating') || '0';
+                ratingDisplay.textContent = `Avaliação atual: ${rating}`;
+            };
+
+            const saveRating = (rating) => {
+                localStorage.setItem('rating', rating);
+                loadRating();
+            };
 
             ratingButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    currentRating = button.getAttribute('data-rating');
-                    ratingDisplay.textContent = `Avaliação atual: ${currentRating}`;
+                    const rating = button.getAttribute('data-rating');
+                    saveRating(rating);
                 });
             });
+
+            loadRating();
         });
     </script>
 </body>
