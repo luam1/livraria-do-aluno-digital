@@ -5,78 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Livraria</title>
     <style>
+        /* Estilos gerais */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f2f2f2;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            width: 100%;
+            max-width: 600px;
             background-color: #fff;
-            padding: 20px;
+            padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-sizing: border-box;
         }
+
         h1 {
             color: #333;
-            text-align: center;
-        }
-        .contact-info {
             margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ccc;
         }
+
+        /* Estilos para informações de contato */
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
         .contact-info h2 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
+            color: #555;
         }
+
         .contact-info p {
             margin: 5px 0;
-            color: #666;
+            color: #777;
         }
+
         .social-links {
             margin-top: 10px;
         }
+
         .social-links a {
             display: inline-block;
-            margin-right: 10px;
+            margin: 0 10px;
             color: #007bff;
             text-decoration: none;
+            transition: color 0.3s;
         }
+
         .social-links a:hover {
-            text-decoration: underline;
+            color: #0056b3;
         }
+
+        /* Estilos para formulário de contato */
         .contact-form {
-            margin-top: 20px;
+            text-align: left;
         }
+
+        .contact-form h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
         .contact-form label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             color: #333;
         }
-        .contact-form input[type="text"], 
-        .contact-form input[type="email"], 
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
         .contact-form textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
+            width: calc(100% - 16px);
+            padding: 10px;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            resize: vertical;
+            font-size: 1rem;
         }
+
         .contact-form textarea {
             height: 120px;
+            resize: vertical;
         }
+
         .contact-form input[type="submit"] {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
         }
+
         .contact-form input[type="submit"]:hover {
             background-color: #45a049;
         }
@@ -89,17 +121,16 @@
         <div class="contact-info">
             <h2>Informações para Desenvolvedor</h2>
             <p>Nome: João Silva</p>
-            <p>Email: joao.silva@seudominio.com</p>
+            <p>Email: <a href="mailto:joao.silva@seudominio.com">joao.silva@seudominio.com</a></p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/joaosilva" target="_blank">LinkedIn</a>
                 <a href="https://twitter.com/joaosilva" target="_blank">Twitter</a>
-                <a href="mailto:joao.silva@seudominio.com">Email</a>
             </div>
         </div>
 
         <div class="contact-form">
             <h2>Formulário de Contato</h2>
-            <form action="#" method="post">
+            <form action="#" method="post" novalidate>
                 <label for="name">Nome:</label>
                 <input type="text" id="name" name="name" required>
 
