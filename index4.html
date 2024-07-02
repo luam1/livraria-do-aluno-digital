@@ -1,4 +1,4 @@
-Corrija os erros do codigo a seguir <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -175,9 +175,9 @@ Corrija os erros do codigo a seguir <!DOCTYPE html>
                 <button>Livro Poesia</button>
             </div>
             <div id="a12" class="hidden">
-                <button>Livro de Mangá</button>
-                <button>Livro de Mangá</button>
-                <button>Livro de Mangá</button>
+                <button>Mangá</button>
+                <button>Mangá</button>
+                <button>Mangá</button>
             </div>
 
             </div>
@@ -189,19 +189,19 @@ Corrija os erros do codigo a seguir <!DOCTYPE html>
             <button onclick="showSection('a14')">Gibis</button>
             <button onclick="showSection('a15')">suspence</button>
               <div id="a13" class="hidden">
-                <button>Livro de Terror 1</button>
-                <button>Livro de Terror 2</button>
-                <button>Livro de Terror 3</button>
+                <button>Crônicas </button>
+                <button>Crônicas </button>
+                <button>Crônicas </button>
             </div>
             <div id="a14" class="hidden">
-                <button>Livro Clássico 1</button>
-                <button>Livro Clássico 2</button>
-                <button>Livro Clássico 3</button>
+                <button>Gibis</button>
+                <button>Gibis</button>
+                <button>Gibis</button>
             </div>
             <div id="a15" class="hidden">
-                <button>Livro de Mistério 1</button>
-                <button>Livro de Mistério 2</button>
-                <button>Livro de Mistério 3</button>
+                <button>Livro de Suspense </button>
+                <button>Livro de Suspense </button>
+                <button>Livro de Suspense </button>
             </div>
 
             </div>
@@ -211,7 +211,7 @@ Corrija os erros do codigo a seguir <!DOCTYPE html>
 
     <script>
         function showSection(sectionId) {
-            var sections = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6'];
+            var sections = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13', 'a14', 'a15'];
             sections.forEach(function(id) {
                 document.getElementById(id).classList.add('hidden');
             });
@@ -220,7 +220,7 @@ Corrija os erros do codigo a seguir <!DOCTYPE html>
 
         function searchBooks() {
             var input = document.getElementById('searchInput').value.toLowerCase();
-            var sections = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6'];
+            var sections = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13', 'a14', 'a15'];
             sections.forEach(function(id) {
                 var section = document.getElementById(id);
                 var buttons = section.getElementsByTagName('button');
