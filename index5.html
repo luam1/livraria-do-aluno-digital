@@ -1,134 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat e Comentários</title>
-    <link rel="stylesheet" href="styles.css">
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-} 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat e Comentários</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
 
-.chat-container, .comments-section, .rating-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-} 
+        .chat-container, .comments-section, .rating-section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
 
-.chat-window {
-    border: 1px solid #ccc;
-    height: 200px;
-    overflow-y: auto;
-    padding: 10px;
-    margin-bottom: 10px;
-} 
+        .chat-window {
+            border: 1px solid #ccc;
+            height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
 
-#chat-input, #comment-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-} 
+        #chat-input, #comment-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
 
-button {
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-} 
+        button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-button:hover {
-    background-color: #0056b3;
-} 
+        button:hover {
+            background-color: #0056b3;
+        }
 
-.rating-button {
-    margin: 0 5px;
-}
-</style>
+        .rating-button {
+            margin: 0 5px;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="chat-container">
-        <div class="chat-window" id="chat-window"></div>
-        <input type="text" id="chat-input" placeholder="Digite sua mensagem">
-        <button id="send-button">Enviar</button>
-    </div> 
+    <div class="chat-container">
+        <div class="chat-window" id="chat-window"></div>
+        <input type="text" id="chat-input" placeholder="Digite sua mensagem">
+        <button id="send-button">Enviar</button>
+    </div>
 
-    <div class="comments-section">
-        <h2>Comentários</h2>
-        <textarea id="comment-input" placeholder="Deixe seu comentário"></textarea>
-        <button id="comment-button">Comentar</button>
-        <div id="comments-list"></div>
-    </div> 
+    <div class="comments-section">
+        <h2>Comentários</h2>
+        <textarea id="comment-input" placeholder="Deixe seu comentário"></textarea>
+        <button id="comment-button">Comentar</button>
+        <div id="comments-list"></div>
+    </div>
 
-    <div class="rating-section">
-        <h2>Avaliação</h2>
-        <button class="rating-button" data-rating="1">1</button>
-        <button class="rating-button" data-rating="2">2</button>
-        <button class="rating-button" data-rating="3">3</button>
-        <button class="rating-button" data-rating="4">4</button>
-        <button class="rating-button" data-rating="5">5</button>
-        <p id="rating-display">Avaliação atual: 0</p>
-    </div> 
+    <div class="rating-section">
+        <h2>Avaliação</h2>
+        <button class="rating-button" data-rating="1">1</button>
+        <button class="rating-button" data-rating="2">2</button>
+        <button class="rating-button" data-rating="3">3</button>
+        <button class="rating-button" data-rating="4">4</button>
+        <button class="rating-button" data-rating="5">5</button>
+        <p id="rating-display">Avaliação atual: 0</p>
+    </div>
 
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Chat functionality
-    const chatWindow = document.getElementById('chat-window');
-    const chatInput = document.getElementById('chat-input');
-    const sendButton = document.getElementById('send-button'); 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Chat functionality
+            const chatWindow = document.getElementById('chat-window');
+            const chatInput = document.getElementById('chat-input');
+            const sendButton = document.getElementById('send-button');
 
-    sendButton.addEventListener('click', () => {
-        const message = chatInput.value;
-        if (message.trim()) {
-            const messageElement = document.createElement('div');
-            messageElement.textContent = message;
-            chatWindow.appendChild(messageElement);
-            chatInput.value = '';
-            chatWindow.scrollTop = chatWindow.scrollHeight;
-        }
-    }); 
+            sendButton.addEventListener('click', () => {
+                const message = chatInput.value;
+                if (message.trim()) {
+                    const messageElement = document.createElement('div');
+                    messageElement.textContent = message;
+                    chatWindow.appendChild(messageElement);
+                    chatInput.value = '';
+                    chatWindow.scrollTop = chatWindow.scrollHeight;
+                }
+            });
 
-    // Comments functionality
-    const commentInput = document.getElementById('comment-input');
-    const commentButton = document.getElementById('comment-button');
-    const commentsList = document.getElementById('comments-list'); 
+            // Comments functionality
+            const commentInput = document.getElementById('comment-input');
+            const commentButton = document.getElementById('comment-button');
+            const commentsList = document.getElementById('comments-list');
 
-    commentButton.addEventListener('click', () => {
-        const comment = commentInput.value;
-        if (comment.trim()) {
-            const commentElement = document.createElement('div');
-            commentElement.textContent = comment;
-            commentsList.appendChild(commentElement);
-            commentInput.value = '';
-        }
-    }); 
+            commentButton.addEventListener('click', () => {
+                const comment = commentInput.value;
+                if (comment.trim()) {
+                    const commentElement = document.createElement('div');
+                    commentElement.textContent = comment;
+                    commentsList.appendChild(commentElement);
+                    commentInput.value = '';
+                }
+            });
 
-    // Rating functionality
-    const ratingButtons = document.querySelectorAll('.rating-button');
-    const ratingDisplay = document.getElementById('rating-display');
-    let currentRating = 0; 
+            // Rating functionality
+            const ratingButtons = document.querySelectorAll('.rating-button');
+            const ratingDisplay = document.getElementById('rating-display');
+            let currentRating = 0;
 
-    ratingButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            currentRating = button.getAttribute('data-rating');
-            ratingDisplay.textContent = `Avaliação atual: ${currentRating}`;
-        });
-    });
-});
-</script>
+            ratingButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    currentRating = button.getAttribute('data-rating');
+                    ratingDisplay.textContent = `Avaliação atual: ${currentRating}`;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
