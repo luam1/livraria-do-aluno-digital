@@ -11,10 +11,10 @@ Bem-vindo à Livraria do Meio Ambiente! Este projeto foi desenvolvido com o obje
 
 - **Frontend**
 - **Backend**
--**Pagina de Login(semifuncional)**
--**Pagina de Pesquisa(semifuncional)**
--**Página de contato**
--**Página de configurações(Não funcional)**
+- **Pagina de Login(semifuncional)**
+- **Pagina de Pesquisa(semifuncional)**
+- **Página de contato**
+- **Página de configurações(Não funcional)**
 
 ## Licença 
 
