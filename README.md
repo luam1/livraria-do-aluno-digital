@@ -1,16 +1,28 @@
-# Garten of Books
-      
+# Livraria do Meio Ambiente 
 
-         Esse e um site funcional para mobile e PC com intuito de disponizar varios livros de forma gratuita e simples, esse site contem:
-        
-    * Barra de pesquisa;
-    * Uma pagina de contato com o desse projeto (vugo eu);
-    * Um chat de conversa semi-funcional;
-    * E configorações nada funcionais;
-    * E no inicio uma tela de login também semi-funcional.
-          
-         Esse projeto conta com 14 livros funcionais e diversos espaços para adicionar mais livros 
+Bem-vindo à Livraria do Meio Ambiente! Este projeto foi desenvolvido com o objetivo de fornecer uma ampla gama de recursos sobre questões ambientais, sustentabilidade e ecologia. Nossa livraria oferece uma coleção diversificada de livros, artigos e materiais educativos para pessoas de todas as idades interessadas em aprender mais sobre o meio ambiente e como protegê-lo. 
 
-# Sobre o Modo de Uso #
+## Funcionalidades 
 
-         Basta fazer login procurar pelo livro dessejado e ler 
+- **Catálogo de Livros**: Navegue por uma extensa coleção de livros sobre diversos tópicos ambientais, incluindo mudanças climáticas, biodiversidade, energia renovável, conservação e muito mais.
+- **Artigos e Revistas**: Acesse uma variedade de artigos e revistas científicas para se manter atualizado com as últimas pesquisas e descobertas na área ambiental. 
+
+## Tecnologias Utilizadas 
+
+- **Frontend**;
+- **Backend**;
+-**Pagina de Login(semifuncional)**;
+-**Pagina de Pesquisa(semifuncional)**;
+-**Página de contato**;
+-**Página de configurações(Não funcional)**.
+## Licença 
+
+Este projeto está licenciado sob a [MIT License](LICENSE). 
+
+## Contato 
+
+Se você tiver alguma dúvida ou sugestão, entre em contato conosco em [luan.guizzo@escola.pr.gov.br](mailto:luan.guizzo@escola.pr.gov.br). 
+
+Agradecemos por visitar a Livraria do Meio Ambiente e esperamos que aproveite nossos recursos para aprender mais sobre a proteção do nosso planeta! 
+
+                #FIM
