@@ -9,12 +9,13 @@ Bem-vindo à Livraria do Meio Ambiente! Este projeto foi desenvolvido com o obje
 
 ## Tecnologias Utilizadas 
 
-- **Frontend**;
-- **Backend**;
--**Pagina de Login(semifuncional)**;
--**Pagina de Pesquisa(semifuncional)**;
--**Página de contato**;
--**Página de configurações(Não funcional)**.
+- **Frontend**
+- **Backend**
+-**Pagina de Login(semifuncional)**
+-**Pagina de Pesquisa(semifuncional)**
+-**Página de contato**
+-**Página de configurações(Não funcional)**
+
 ## Licença 
 
 Este projeto está licenciado sob a [MIT License](LICENSE). 
