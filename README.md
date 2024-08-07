@@ -26,6 +26,6 @@ Se você tiver alguma dúvida ou sugestão, entre em contato conosco em [luan.gu
 
 Agradecemos por visitar a Livraria do Meio Ambiente e esperamos que aproveite nossos recursos para aprender mais sobre a proteção do nosso planeta! 
 
-##Observação
+## Observação sobre os Códigos 
 
 - **O CSS eo Java script estão já adicionados aos index**
