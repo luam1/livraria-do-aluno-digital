@@ -6,7 +6,105 @@
     <title>Comentários e Avaliações</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background: linear-gradient(to right, #FFFFFF, #00308a);
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1150px;
+    margin: 15px;
+}
+
+.comments-section, .rating-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    flex: 1;
+    transition: transform 0.3s ease;
+}
+
+.comments-section:hover, .rating-section:hover {
+    transform: translateY(-5px);
+}
+
+#comment-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    resize: vertical;
+    height: 80px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.rating-button {
+    margin: 0 5px;
+    background-color: #00308a;
+    color: #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.rating-button:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+h2 {
+    margin-top: 0;
+    color: #555;
+    font-size: 20px;
+}
+
+#comments-list div {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+#rating-display {
+    font-weight: 500;
+}
     </style>
 </head>
 <body>
@@ -36,7 +134,56 @@
     </div>
 
     <script>
-        
+    function searchBooks() {
+          var input = document.getElementById('searchInput').value.toLowerCase();
+        var sections = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12'];
+    sections.forEach(function(id) {
+        var section = document.getElementById(id);
+        var buttons = section.getElementsByTagName('button');
+        var found = false;
+        for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].textContent.toLowerCase().includes(input)) {
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            section.classList.remove('hidden');
+        } else {
+            section.classList.add('hidden');
+        }
+    });
+}   
+document.addEventListener('DOMContentLoaded', () => {
+    // Comments functionality
+    const commentInput = document.getElementById('comment-input');
+    const commentButton = document.getElementById('comment-button');
+    const commentsList = document.getElementById('comments-list');
+
+    const loadComments = () => {
+        const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+        commentsList.innerHTML = '';
+        comments.forEach(comment => {
+            const commentElement = document.createElement('div');
+            commentElement.textContent = comment;
+            commentsList.appendChild(commentElement);
+        });
+    };
+
+    const saveComment = (comment) => {
+        const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+        comments.push(comment);
+        localStorage.setItem('comments', JSON.stringify(comments));
+    };
+
+    commentButton.addEventListener('click', () => {
+        const comment = commentInput.value;
+        if (comment.trim()) {
+            saveComment(comment);
+            loadComments();
+            commentInput.value = '';
+        }
+    });
     </script>
 </body>
 </html>

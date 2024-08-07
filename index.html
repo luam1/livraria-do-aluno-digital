@@ -5,6 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livraria Digital Login</title>
     <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 5px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input {
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+}
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-group button:hover {
+    background-color: #0056b3;
+}
 
     </style>
 </head>
@@ -29,7 +75,33 @@
     </div>
 
     <script>
-        
+        function login() {
+    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (email && username && password) {
+        localStorage.setItem('email', email);
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password); 
+        alert('Login bem-sucedido!');
+
+        window.location.href = 'index2.html';
+    } else {
+        alert('Por favor, preencha todos os campos.');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const email = localStorage.getItem('email');
+    const username = localStorage.getItem('username');
+    if (email && username) {
+        alert(`Bem-vindo de volta, ${username}!`);
+   
+        window.location.href = 'index2.html';
+    }
+});
+
     </script>
 </body>
 </html>
