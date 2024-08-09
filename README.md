@@ -28,4 +28,4 @@ Agradecemos por visitar a Livraria do Meio Ambiente e esperamos que aproveite no
 
 ## Observação sobre os Códigos 
 
-- **O tema do site foi remodificado as pressas por isso pode estar com diversos erros##
+- **O tema do site foi remodificado as pressas por isso pode estar com diversos erros**
