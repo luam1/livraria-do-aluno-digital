@@ -7,13 +7,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(rgb(0, 0, 0), rgb(0, 255, 0), rgb(0, 0, 0));
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
         }
         .settings-container {
             background-color: #000000;
@@ -21,6 +21,7 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
+            transition: background-color 0.3s, color 0.3s;
         }
         .settings-title {
             font-size: 1.5rem;
@@ -69,6 +70,25 @@
         .setting-item .option-btn:last-child {
             margin-right: 0;
         }
+
+        /* Estilos para o tema escuro */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .settings-container.dark-mode {
+            background-color: #1e1e1e;
+        }
+        .setting-item label.dark-mode {
+            color: #ffffff;
+        }
+        .setting-item input[type="submit"].dark-mode {
+            background-color: #3e3e3e;
+            color: #ffffff;
+        }
+        .setting-item input[type="submit"].dark-mode:hover {
+            background-color: #555555;
+        }
     </style>
 </head>
 <body>
@@ -85,13 +105,13 @@
             </div>
             <div class="setting-item">
                 <label for="theme">Tema:</label>
-                <select id="theme" name="theme">
+                <select id="theme" name="theme" onchange="changeTheme()">
                     <option value="light">Claro</option>
                     <option value="dark">Escuro</option>
                 </select>
             </div>
             <div class="setting-item">
-                <label                <label for="font-size">Tamanho da Fonte:</label>
+                <label for="font-size">Tamanho da Fonte:</label>
                 <select id="font-size" name="font-size" onchange="changeFontSize()">
                     <option value="small">Pequeno</option>
                     <option value="medium" selected>Médio</option>
@@ -166,6 +186,25 @@
                     break;
                 default:
                     body.style.fontSize = '16px'; // Tamanho padrão
+            }
+        }
+
+        function changeTheme() {
+            var theme = document.getElementById('theme').value;
+            var body = document.body;
+            var container = document.querySelector('.settings-container');
+            var labels = document.querySelectorAll('.setting-item label');
+
+            if (theme === 'dark') {
+                body.classList.add('dark-mode');
+                container.classList.add('dark-mode');
+                labels.forEach(label => label.classList.add('dark-mode'));
+                document.querySelectorAll('.setting-item input[type="submit"]').forEach(btn => btn.classList.add('dark-mode'));
+            } else {
+                body.classList.remove('dark-mode');
+                container.classList.remove('dark-mode');
+                labels.forEach(label => label.classList.remove('dark-mode'));
+                document.querySelectorAll('.setting-item input[type="submit"]').forEach(btn => btn.classList.remove('dark-mode'));
             }
         }
     </script>
