@@ -166,6 +166,23 @@
                     body.style.fontSize = '20px';
                     break;
             }
+
+
+        changeFontSize();
+
+        function changeFontSize() {
+            var fontSize = document.getElementById('font-size').value;
+            var body = document.body;
+
+            switch (backgroundColor) {
+                case 'small':
+                    body.style.backgroundColor = '#00a31b';
+                    break;
+                case 'claro':
+                    body.style.backgroundColor = '#000000';
+                    break;
+                case 'escuro':
+            }
         }
 
         changeFontSize();
